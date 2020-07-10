@@ -63,7 +63,7 @@ const SignUp: React.FC = () => {
 
         Alert.alert(
           'Cadastro realizado com sucesso',
-          'Você já pode fazer login no GoBarber!'
+          'Você já pode fazer login na Aplicação.',
         );
 
         navigation.goBack();
