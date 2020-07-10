@@ -59,13 +59,15 @@ const SignUp: React.FC = () => {
           abortEarly: false,
         });
 
-        // await api.post('/users', data);
+        await api.post('/users', data);
 
-        // history.push('/');
-        // Alert.alert(
-        //   'Cadastro realizado!',
-        //   'Você já pode fazer seu logon no GoBarber!',
-        // );
+        Alert.alert(
+          'Cadastro realizado com sucesso',
+          'Você já pode fazer login no GoBarber!'
+        );
+
+        navigation.goBack();
+
       } catch (err) {
         if (err instanceof Yup.ValidationError) {
           const errors = getValidationErrors(err);
@@ -78,7 +80,7 @@ const SignUp: React.FC = () => {
           'Ocorreu um erro ao fazer cadastro, tente novamente.',
         );
       }
-    },[]);
+    },[navigation]);
 
   return (
     <>
