@@ -65,6 +65,8 @@ const SignIn: React.FC = () => {
           password: data.password,
         });
 
+        //navigation.navigate('Dashboard')
+
       } catch (err) {
         if (err instanceof Yup.ValidationError) {
           const errors = getValidationErrors(err);
@@ -103,7 +105,9 @@ const SignIn: React.FC = () => {
                 icon="mail"
                 placeholder="E-mail"
                 returnKeyType="next"
-                //onSubmitEditing={}
+                onSubmitEditing={() => {
+                  passwordInputRef.current?.focus();
+                }}
               />
 
               <Input

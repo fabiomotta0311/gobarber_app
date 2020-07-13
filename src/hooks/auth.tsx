@@ -34,10 +34,12 @@ const AuthProvider: React.FC = ({ children }) => {
 
       if (token[1] && user[1]) {
         setData({ token: token[1], user: JSON.parse(user[1]) });
+        console.log('token: ', token, ' user: ', user);
       }
 
       setLoading(false);
     }
+    loadStoragedData();
   }, []);
 
   const signIn = useCallback(async ({ email, password }) => {

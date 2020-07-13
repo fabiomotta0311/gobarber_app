@@ -114,7 +114,7 @@ const SignUp: React.FC = () => {
                 autoCapitalize="none"
                 returnKeyType="next"
                 onSubmitEditing={() => {
-                  passwordInputRef.current.focus();
+                  passwordInputRef.current?.focus();
                 }}
               />
 
